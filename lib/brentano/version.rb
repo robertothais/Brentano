@@ -1,0 +1,3 @@
+module Brentano
+  VERSION = "0.0.1"
+end
