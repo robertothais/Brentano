@@ -1,4 +1,4 @@
-require 'brentano/rails/action_controller'
+require 'brentano/rails/helpers'
 
 module Brentano
   class Railtie < ::Rails::Railtie
