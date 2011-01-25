@@ -14,8 +14,4 @@ module Brentano
   mattr_accessor :presenter_module
   @@presenter_module = "Presenters"  
   
-  def config
-    yield self
-  end
-  
 end
