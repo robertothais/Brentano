@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Roberto Thais"]
   s.email       = ["roberto.n.thais@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Presentation for the masses.}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Classy presenters for Rails 3}
+  s.description = %q{Brentano helps you present ActiveRecord collections to your controllers and avoid repetitive ORM logic}
 
   s.rubyforge_project = "brentano"
   
