@@ -1,13 +1,15 @@
+require 'hashie'
+
 module Brentano
   class Presenter
-    
+
     class_attribute :sizes
 
     attr_reader :subject, :options, :collection, :maximum_size
 
     alias_method :proxy_respond_to?, :respond_to?
 
-    def initialize(subject, options, &blk)
+    def initialize(subject, options = {}, &blk)
       @subject = subject
       @options = Hashie::Mash.new(options)
       yield self if block_given?
@@ -22,7 +24,7 @@ module Brentano
       @maximum_size = if size.is_a? Fixnum
        size
       else
-        sizes[size] 
+        sizes[size]
       end
       options.limit = @maximum_size
     end
@@ -53,6 +55,6 @@ module Brentano
     def to_sql
       @collection.to_sql
     end
-    
+
   end
 end
