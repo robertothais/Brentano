@@ -33,12 +33,12 @@ describe TestPresenter do
     end
 
     context "when a block is given" do
-      it "yields the block" do
-        block_yielded = false
-        presenter = TestPresenter.new @subject do
-          block_yielded = true
+      out = nil
+      it "yields self to the block" do
+        presenter = TestPresenter.new @subject do |obj|
+          out = obj
         end
-        block_yielded.should be_true
+        presenter.should equal(out)
       end
     end
   end

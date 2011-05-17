@@ -9,7 +9,7 @@ module Brentano
     attr_accessor_with_default :absolute_limit,  Brentano.query_limit
 
     def self.finish(relation, options)
-      obj = new relation
+      obj = self.new relation
       yield obj if block_given?
       obj.apply options
     end
