@@ -4,9 +4,9 @@
 module Brentano
   class Query
 
-    attr_accessor_with_default :allowed_methods, [:limit, :offset].freeze
-    attr_accessor_with_default :allowed_scopes,  [].freeze
-    attr_accessor_with_default :absolute_limit,  Brentano.query_limit
+    attr_writer :allowed_methods
+    attr_writer :allowed_scopes
+    attr_writer :absolute_limit
 
     def self.finish(relation, options)
       obj = self.new relation
@@ -30,6 +30,18 @@ module Brentano
         r = r.send(m, options[m]) if options[m].present?
         r
       end
+    end
+    
+    def allowed_methods
+      @allowed_methods ||= Brentano.allowed_methods.dup
+    end
+    
+    def allowed_scopes 
+      @allowed_scopes ||= Brentano.allowed_scopes.dup
+    end
+    
+    def absolute_limit
+      @absolute_limit ||= Brentano.absolute_limit
     end
 
     def initialize(relation)

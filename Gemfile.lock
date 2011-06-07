@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    brentano (0.0.1)
+    brentano (0.0.2)
       activerecord (~> 3)
       activesupport (~> 3)
       hashie (>= 0.4)
